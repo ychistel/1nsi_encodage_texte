@@ -1,0 +1,4 @@
+U+0000 à U+007F & :math:`0xxx xxxx` & 7 bits
+U+0080 à U+07FF & :math:`110x xxxx` :math:`10xx xxxx` & 11 bits
+U+0800 à U+FFFF & :math:`1110 xxxx` :math:`10xx xxxx` :math:`10xx xxxx` & 16 bits
+U+10000 à U+10FFFF & :math:`1111 0xxx` :math:`10xx xxxx` :math:`10xx xxxx` :math:`10xx xxxx` & 21 bits
