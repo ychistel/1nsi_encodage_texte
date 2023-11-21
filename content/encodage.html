@@ -1,0 +1,588 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="fr" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Représentation des caractères &#8212; NSI</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/translations.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/encodage';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="Exercices" href="exercice.html" />
+    <link rel="prev" title="Encodage de texte" href="../index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="fr"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Passer au contenu principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">NSI</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Représentation des caractères</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercice.html">Exercices</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Téléchargez cette page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/content/encodage.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Télécharger le fichier source"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimer au format PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Mode plein écran"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="clair/sombre" aria-label="clair/sombre" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Représentation des caractères</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenu </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#le-codage-ascii">Le codage ASCII</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#norme-iso-8859">Norme ISO-8859</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-norme-unicode">La norme Unicode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#en-python">En Python</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="representation-des-caracteres">
+<h1>Représentation des caractères<a class="headerlink" href="#representation-des-caracteres" title="Lien permanent vers cette rubrique">#</a></h1>
+<p>La représentation des textes dans un ordinateur s’appuie sur un encodage. Une table associe un nombre à chaque caractère. Les systèmes d’exploitation possèdent ces tables et font la conversion en binaire.</p>
+<p>L’informatique créée aux Etats-Unis, a pu se contenter 128 caractères en anglais pendant longtemps, mais ces caractères sont devenus insuffisants notamment avec les langues latines et leurs nombreux caractères accentués. Les tables se sont alors agrandies et se sont harmonisées.</p>
+<p>Mais d’autres langues, comme l’arabe, le corréen et le japonais qui utilisent des caractères très particuliers, propres à leurs langues, ont conduit à étendre encore les tables de caractères.</p>
+<p>On peut retenir 3 tables de codage importantes :</p>
+<ul class="simple">
+<li><p>La table de codage ASCII créé dans les années 1960.</p></li>
+<li><p>La norme ISO 8859-1 et 8859-15</p></li>
+<li><p>Le codage unicode et sa représentation en UTF-8</p></li>
+</ul>
+<section id="le-codage-ascii">
+<h2>Le codage ASCII<a class="headerlink" href="#le-codage-ascii" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>La table de caratères ASCII (American Standard Code for Information Interchange) a été élaborée au début des années 1960.</p>
+<p>Cette norme définit un jeu de 128 caractères représenté par un octet, mais seuls 7 bits sont utilisés d’où le nombre de caractères utilisés puisque sur 7 bits on dispose de <span class="math notranslate nohighlight">\(2^{7}=128\)</span> valeurs différentes.</p>
+<p>A chaque codage binaire d’un caractère est associé un nombre décimal égal à cette valeur binaire convertie.</p>
+<div class="admonition-exemple admonition">
+<p class="admonition-title">Exemple</p>
+<p>Voici quelques caractères de la table ASCII:</p>
+<ul class="simple">
+<li><p>Le caractère <code class="docutils literal notranslate"><span class="pre">A</span></code>, en majuscule, correspond au nombre décimal <span class="math notranslate nohighlight">\(65_{10}\)</span> dans la table ASCII que l’on note <span class="math notranslate nohighlight">\(41_{16}\)</span> en hexadécimal et de codage binaire <span class="math notranslate nohighlight">\(01000001_{2}\)</span>.</p></li>
+<li><p>Le caractère <code class="docutils literal notranslate"><span class="pre">a</span></code>, en minuscule, correspond au nombre décimal <span class="math notranslate nohighlight">\(97_{10}\)</span> dans la table ASCII que l’on note <span class="math notranslate nohighlight">\(61_{16}\)</span> en hexadécimal et de codage binaire <span class="math notranslate nohighlight">\(01100001_{2}\)</span>.</p></li>
+</ul>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Indication</p>
+<p>La table ASCII contient des caractères spéciaux entre <span class="math notranslate nohighlight">\(00\)</span> et <span class="math notranslate nohighlight">\(32\)</span> comme les caractères blancs (espace, tabulation, etc), retours à la ligne, suppressions et des caractères de contrôle. Ce sont des caractères non imprimables.</p>
+<p>A ces 32 caractères spéciaux, il y en a un dernier de valeur décimale <span class="math notranslate nohighlight">\(127_{10}\)</span> qui correspond à la touche del du clavier.</p>
+</div>
+<p class="unnumbered rubric" id="table-de-caractuxe8res-ascii">Table de caractères ASCII</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/tableASCII.png"><img alt="tableASCII.png" src="../_images/tableASCII.png" style="width: 560px;" /></a>
+</figure>
+<p>Cette table est à double entrée. La colonne de gauche représente les trois premiers chiffres hexadécimaux et la première ligne le dernier chiffre hexadécimal du codage du caractère.</p>
+<p>On lit la table de la façon suivante:</p>
+<ul class="simple">
+<li><p>on repère le caractère dans la table situé à l’intersection d’une ligne et d’une colonne;</p></li>
+<li><p>sur la ligne de ce caractère, on note les trois chiffres hexadécimaux de la première colonne;</p></li>
+<li><p>sur la colonne de ce caratère, on note le chiffre hexadécimal de la première ligne.</p></li>
+<li><p>on concatène les trois chiffres de la première colonne avec le chiffre de la première ligne.</p></li>
+</ul>
+<div class="admonition-exemple admonition">
+<p class="admonition-title">Exemple</p>
+<p>La lettre capitale <strong>A</strong> est située sur la ligne contenant les chiffres <span class="math notranslate nohighlight">\(004\)</span> (première colonne) et sur la colonne contenant le chiffre <span class="math notranslate nohighlight">\(1\)</span> (première ligne). Donc le caractère <strong>A</strong> est représenté par la valeur hexadécimale 0041. Il est codé en binaire dans la machine comme sa représentation soit <span class="math notranslate nohighlight">\(0100 0001\)</span>.</p>
+</div>
+</section>
+<section id="norme-iso-8859">
+<h2>Norme ISO-8859<a class="headerlink" href="#norme-iso-8859" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>Les caractères imprimables de la table ASCII sont devenus rapidement insuffisants pour transmettre des textes dans d’autres langues que l’anglais.</p>
+<p>La table ASCII ne contient aucun caractère accentué ! Pour remédier à ce problème l’ISO, <strong>Organisme International de Normalisation</strong> a proposé la table ISO 8859 qui utilise 256 caractères sur un octet complet.</p>
+<p>Pour définir le plus de caractères possible, la norme ISO définit plusieurs tables 8859-n où n est le numéro de la table. Il y a 16 tables pour les différentes langues.</p>
+<p>En France, on a utilisé la table 8859-1, appelée aussi <em>latin-1</em> et considérée comme multi-langue et la table ISO-8859-15 qui introduit le symbole monétaire € et qui gère mieux le français.</p>
+<p class="rubric">Tables de caractères ISO 8859-1 et 8859-15</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/iso-8859-1.png"><img alt="iso-8859-1.png" src="../_images/iso-8859-1.png" style="width: 560px;" /></a>
+</figure>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../_images/iso-8859-15.png"><img alt="iso-8859-1.png" src="../_images/iso-8859-15.png" style="width: 560px;" /></a>
+</figure>
+<p>Les tables précédentes montrent que les 128 premiers caractères sont ceux de la table ASCII. Finalement, on a complété la table ASCII avec 128 nouveaux caractères (selon les langues et pays).</p>
+<p>On peut remarquer quelques différences entre les tables ISO 8859-1 et ISO 8859-15 comme les fractions 1/4 et 1/2 peu utilisées en France et remplacées par les caractères collés comme OE et oe.</p>
+</section>
+<section id="la-norme-unicode">
+<h2>La norme Unicode<a class="headerlink" href="#la-norme-unicode" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>La norme ISO 8859 permet d’encoder un grand nombre de caractères mais cela ne suffisait toujours pas. La multiplicité des tables rend difficile la rédaction d’un texte en plusieurs langues qui utilisent différentes tables ! Par exemple écrire un texte mélangeant le japonais et le français.</p>
+<p>L’ISO a donc défini un jeu universel de caractères sous la norme ISO 10646 appelée <strong>UNICODE</strong>.</p>
+<p>Cette norme associe à chaque caractère (lettre, idéogramme, emoji,…) un <strong>point de code</strong>. Ce point de code est un <strong>numéro</strong> en <strong>hexadécimal</strong> préfixé par <strong>U+</strong>.</p>
+<div class="admonition-exemple admonition">
+<p class="admonition-title">Exemple</p>
+<p>Le caractère “A” a pour point de code <strong>U+0041</strong> et nom unique <strong>LATIN CAPITAL LETTER A</strong>. On remarque que c’est sa valeur hexadécimale dans la table ASCII.</p>
+</div>
+<p><strong>Unicode</strong> est une norme qui définit les techniques pour encoder en binaire les <strong>points de code</strong> de façon plus ou moins économique. Ces encodages sont appelés <strong>Universal Transform Format</strong> et notés <strong>UTF-n</strong> où n désigne le nombre minimal de bits pour représenter un point de code (n=8, 16 ou 32).</p>
+<p><strong>UTF-8</strong> est le format d’encodage qui utilise au minimum 8 bits (1 octet) pour encoder les caractères. Il est compatible avec la table de caractères ASCII. Les 128 premiers points de code sont ceux de la table ASCII.</p>
+<p>Selon les caractères et la valeur des points de code, l’encodage en UTF-8 utilise 1, 2, 3 ou 4 octets.</p>
+<p>Le tableau ci-dessous donne l’encodage des caratères en UTF-8.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Plage</strong></p></th>
+<th class="head"><p><strong>Suite d’octets (en
+binaire)</strong></p></th>
+<th class="head"><p><strong>Nombre de bits
+utilisés</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>U+0000 à U+007F</p></td>
+<td><p>0xxxxxxx</p></td>
+<td><p>7 bits</p></td>
+</tr>
+<tr class="row-odd"><td><p>U+0080 à U+07FF</p></td>
+<td><p>110xxxxx 10xxxxxx</p></td>
+<td><p>11 bits</p></td>
+</tr>
+<tr class="row-even"><td><p>U+0800 à U+FFFF</p></td>
+<td><p>1110xxxx 10xxxxxx
+10xxxxxx</p></td>
+<td><p>16 bits</p></td>
+</tr>
+<tr class="row-odd"><td><p>U+10000 à U+10FFFF</p></td>
+<td><p>11110xxx 10xxxxx
+10xxxxxx 10xxxxxx</p></td>
+<td><p>21 bits</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition-exemple admonition">
+<p class="admonition-title">Exemple</p>
+<p>Le caractère accentué É que l’on retrouve dans la table ISO 8859-15 a pour      point de code <strong>U+00C9</strong>. Ce point de code appartient à la plage        <span class="math notranslate nohighlight">\([U+0080; U+07FF]\)</span> donc il est encodé en UTF-8 sur 2 octets       (contrairement à l’encodage ISO qui n’en utilise qu’un seul).</p>
+<p>Comment est-il encodé en binaire ?</p>
+<p>L’encodage binaire sera de la forme <span class="math notranslate nohighlight">\(110xxxxx~~10xxxxxx\)</span> ou chaque x représente un bit issu du point de code.</p>
+<p>On convertit en binaire <span class="math notranslate nohighlight">\(00C9_{16} = 0000~0000~~1100~1001_{2}\)</span> et on remplace chaque bit x par un bit de C9.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Sur 2 octets</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>0</p></th>
+<th class="head"><p>x</p></th>
+<th class="head"><p>x</p></th>
+<th class="head"><p>x</p></th>
+<th class="head"><p>x</p></th>
+<th class="head"><p>x</p></th>
+<th class="head"><p>1</p></th>
+<th class="head"><p>0</p></th>
+<th class="head"><p>x</p></th>
+<th class="head"><p>x</p></th>
+<th class="head"><p>x</p></th>
+<th class="head"><p>x</p></th>
+<th class="head"><p>x</p></th>
+<th class="head"><p>x</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>U+00C9</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td></td>
+<td></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>UTF-8</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>1</p></td>
+</tr>
+</tbody>
+</table>
+<p>En écriture hexadécimale, le caractère de point de code <strong>U+00C9</strong> est encodé en UTF-8 par <strong>C3 89</strong>.</p>
+</div>
+</section>
+<section id="en-python">
+<h2>En Python<a class="headerlink" href="#en-python" title="Lien permanent vers cette rubrique">#</a></h2>
+<p>En python, on peut déclarer, sous réserve de coder en UTF-8, directement un caractère par son point de code unicode.</p>
+<p>Par exemple pour le symbole � : <code class="docutils literal notranslate"><span class="pre">c=\uFFFD</span></code>.
+Il existe une méthode <strong>encode()</strong> qui donne le codage binaire noté en hexadécimal d’un caratère dont on connait le point de code:</p>
+<p>Avec <code class="docutils literal notranslate"><span class="pre">c=\uFFFD</span></code> et en exécutant <code class="docutils literal notranslate"><span class="pre">c.encode()</span></code>, cela renvoie <code class="docutils literal notranslate"><span class="pre">b'\xe2\x82\xac'</span></code> qui est le code hexadécimal de l’encodage en UTF-8 du caractère.</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../index.html"
+       title="page précédente">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">précédent</p>
+        <p class="prev-next-title">Encodage de texte</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="exercice.html"
+       title="page suivante">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">suivant</p>
+        <p class="prev-next-title">Exercices</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenu
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#le-codage-ascii">Le codage ASCII</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#norme-iso-8859">Norme ISO-8859</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-norme-unicode">La norme Unicode</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#en-python">En Python</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Par Yannick Chistel
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023, Yannick Chistel.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
