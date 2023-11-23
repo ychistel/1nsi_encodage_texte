@@ -26,21 +26,7 @@ On donne la table ASCII:
 Exercice 2
 ----------
 
-#. Ouvrir le bloc-note de windows puis taper la phrase "Les élèves à
-   l’école."
-
-#. Enregistrer le fichier avec l’extension ``txt``.
-
-#. Ouvrez votre fichier avec Libre office. Que remarquez-vous ?
-
-#. Quelle explication peut-on donner ? Comment l'éviter ?
-
-
-Exercice 3
-----------
-
-Voici le code d'une page web html à copier coller dans un fichier avec
-l'extension ``html``.
+Voici le code d'une page web html à copier coller dans un fichier avec l'extension ``html``.
 
 .. literalinclude:: ../doc/ex_encodage_utf_iso_html.html
 	:language: html
@@ -50,19 +36,18 @@ Ce fichier html est téléchargeable : :download:`fichier html<../doc/ex_encodag
 Ouvrir ce fichier avec un navigateur et répondre aux questions posées.
 	
 
-.. _exercice-3:
+.. _exercice-2:
 
-Exercice 4
+Exercice 3
 ----------
 
 Un caractère a comme point de code **U+005A**.
 
 #. A quelle plage appartient ce point de code ?
 #. Combien d'octets faut-il pour l'encoder en UTF-8 ?
-#.	Ce caractère est-il un caractère de la table ASCII? Si oui, en déduire son
-	encodage en binaire.
+#.	Ce caractère est-il un caractère de la table ASCII? Si oui, en déduire son encodage en binaire.
 
-Exercice 5
+Exercice 4
 ----------
 
 Le caractère de point de code **U+FFFD** appartient à la plage :math:`[U+0800 ;
@@ -76,29 +61,22 @@ U+FFFF]`. Ce caractère est donc encodé en UTF-8 sur trois octets.
 #. Convertir l'encodage binaire en hexadécimal.
 
 
-Exercice 6
+Exercice 5
 ----------
 
-Dans la langue française, on retrouve des ligatures, c’est à dire que
-certaines lettres sont collées l’une à l’autre. Par exemple, le o et le
+Dans la langue française, on retrouve des ligatures, c’est à dire que certaines lettres sont collées l’une à l’autre. Par exemple, le o et le
 e sont collés dans les mots nœud, œil et œuvre.
 
-La ligature œ est apparue dans la table ISO 8859-15 avec le code hexadécimal BD.
+La ligature œ est apparue dans la table ISO 8859-15 avec le code hexadécimal BD.
 
 Dans la norme Unicode, cette ligature a pour point de code **U+0153**.
 
-On rappelle que le codage binaire en UTF-8 se fait en suivant les
-indications du tableau ci-dessous.
+On rappelle que le codage binaire en UTF-8 se fait en suivant les indications du tableau ci-dessous.
 
 .. csv-table::
 	:header: Plage, Ecriture binaire, Nombre de bits
 	:file: ../csv/table_unicode.csv
 	:delim: &
 
-
-#. Donner, selon la norme ISO, le codage binaire de la ligature **œ**.
-
 #. Combien faut-il d’octets pour coder la ligature **œ** en UTF-8
-
-#. Après avoir converti le point de code en binaire, en déduire le
-   codage binaire en UTF-8 de la ligature **œ**.
+#. Après avoir converti le point de code en binaire, en déduire le codage binaire en UTF-8 de la ligature **œ**.
