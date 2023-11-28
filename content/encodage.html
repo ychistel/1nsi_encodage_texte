@@ -379,36 +379,6 @@ document.write(`
 <p><strong>UTF-8</strong> est le format d’encodage qui utilise au minimum 8 bits (1 octet) pour encoder les caractères. Il est compatible avec la table de caractères ASCII. Les 128 premiers points de code sont ceux de la table ASCII.</p>
 <p>Selon les caractères et la valeur des points de code, l’encodage en UTF-8 utilise 1, 2, 3 ou 4 octets.</p>
 <p>Le tableau ci-dessous donne l’encodage des caratères en UTF-8.</p>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p><strong>Plage</strong></p></th>
-<th class="head"><p><strong>Suite d’octets (en
-binaire)</strong></p></th>
-<th class="head"><p><strong>Nombre de bits
-utilisés</strong></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>U+0000 à U+007F</p></td>
-<td><p>0xxxxxxx</p></td>
-<td><p>7 bits</p></td>
-</tr>
-<tr class="row-odd"><td><p>U+0080 à U+07FF</p></td>
-<td><p>110xxxxx 10xxxxxx</p></td>
-<td><p>11 bits</p></td>
-</tr>
-<tr class="row-even"><td><p>U+0800 à U+FFFF</p></td>
-<td><p>1110xxxx 10xxxxxx
-10xxxxxx</p></td>
-<td><p>16 bits</p></td>
-</tr>
-<tr class="row-odd"><td><p>U+10000 à U+10FFFF</p></td>
-<td><p>1110xxxx 10xxxxx
-10xxxxxx 10xxxxxx</p></td>
-<td><p>21 bits</p></td>
-</tr>
-</tbody>
-</table>
 <div class="admonition-exemple admonition">
 <p class="admonition-title">Exemple</p>
 <p>Le caractère accentué É que l’on retrouve dans la table ISO 8859-15 a pour      point de code <strong>U+00C9</strong>. Ce point de code appartient à la plage        <span class="math notranslate nohighlight">\([U+0080; U+07FF]\)</span> donc il est encodé en UTF-8 sur 2 octets       (contrairement à l’encodage ISO qui n’en utilise qu’un seul).</p>
