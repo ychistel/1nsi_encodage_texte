@@ -117,7 +117,7 @@ Le tableau ci-dessous donne l’encodage des caratères en UTF-8.
 | U+0800 à U+FFFF    | 1110xxxx 10xxxxxx     | 16 bits               |
 |                    | 10xxxxxx              |                       |
 +--------------------+-----------------------+-----------------------+
-| U+10000 à U+10FFFF | 11110xxx 10xxxxx      | 21 bits               |
+| U+10000 à U+10FFFF | 1110xxxx 10xxxxx      | 21 bits               |
 |                    | 10xxxxxx 10xxxxxx     |                       |
 +--------------------+-----------------------+-----------------------+
 
